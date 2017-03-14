@@ -12,19 +12,6 @@
 
 
     ##
-    ## Dashboard & Api
-    ##################################
-    RewriteRule ^(backend-assets/.*)$ backend/public/$1 [L]
-    RewriteRule ^(bower-assets/.*)$ backend/public/$1 [L]
-    RewriteRule ^(ionic-assets/.*)$ backend/public/$1 [L]
-
-    RewriteRule ^(api.*)$ backend/public/index.php [L]
-    RewriteRule ^(docs.*)$ backend/public/$1 [L]
-    RewriteRule ^(dashboard.*)$ backend/public/index.php [L]
-
-
-
-    ##
     ## Frontend
     #################
     RewriteBase /
@@ -32,5 +19,24 @@
     RewriteRule ^(build.*)$ frontend/www/$1 [L]
     RewriteRule ^(assets.*)$ frontend/www/$1 [L]
     RewriteRule ^(cordova.*)$ frontend/www/$1 [L]
-    RewriteRule ^$ frontend/www/index.html [L]
+    RewriteRule ^app$ frontend/www/index.html [L]
+
+
+
+    ##
+    ## Dashboard & Api
+    ##################################
+    RewriteRule ^(backend-assets/.*)$ backend/public/$1 [L]
+    RewriteRule ^(bower-assets/.*)$ backend/public/$1 [L]
+    RewriteRule ^(bootstrap-assets/.*)$ backend/public/$1 [L]
+    RewriteRule ^(ionic-assets/.*)$ backend/public/$1 [L]
+
+    RewriteRule ^(api.*)$ backend/public/index.php [L]
+    RewriteRule ^(docs.*)$ backend/public/$1 [L]
+    RewriteRule ^(dashboard.*)$ backend/public/index.php [L]
+    RewriteRule ^(auth.*)$ backend/public/index.php [L]
+    RewriteRule ^(timeline.*)$ backend/public/index.php [L]
+    RewriteRule ^(topic.*)$ backend/public/index.php [L]
+    RewriteRule ^(activity.*)$ backend/public/index.php [L]
+    RewriteRule ^$ backend/public/index.php [L]
 </IfModule>
