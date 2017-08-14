@@ -21,4 +21,3 @@ script:
   - ./vendor/bin/php-cs-fixer fix database
   - ./vendor/bin/phpcs --config-set default_standard PSR2
   - ./vendor/bin/phpcs app
-  - ./vendor/bin/phpcs database
