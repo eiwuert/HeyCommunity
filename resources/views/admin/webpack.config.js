@@ -5,16 +5,25 @@ module.exports = {
   entry: "./index.js",
   module: {
     loaders: [{
-      test: /\.js?$/,
+      // APP
+      test: /\.js$/,
       exclude: /(node_modules)/,
       loader: 'babel-loader',
       query: {
         presets: ['react', 'es2015']
       }
-    }]
+    }, {
+      // AdminLTE JS
+      test: /\.js$/,
+      include: path.resolve(__dirname, 'node_modules/adminlte-reactjs/src'),
+      loader: 'babel-loader',
+      query: {
+        presets: ['react', 'es2015']
+      }
+   }]
   },
   output: {
-    path: __dirname,
-    filename: "../../../public/assets/javascript/admin-bundle.js"
+    path: path.resolve(__dirname, '../../../public/assets/javascript'),
+    filename: "admin-bundle.js"
   }
 };
