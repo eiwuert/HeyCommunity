@@ -1,6 +1,13 @@
 language: php
+
 php:
   - 7.0
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+
 before_script:
   - mysql -e 'create database `dev_heycommunity`;'
   - composer self-update
@@ -8,6 +15,8 @@ before_script:
   - cp .env.travis .env
   - php artisan key:generate
   - php artisan migrate:refresh --seed -n
+
 script:
   - ./vendor/bin/php-cs-fixer fix app
   - ./vendor/bin/php-cs-fixer fix database
+
